@@ -25,31 +25,45 @@ public class PaintProduct : IBuyable
     /// <summary>
     /// 
     /// </summary>
-    private PaintType PaintType { get; set; }
+    public int ProductId { get; set; }
     
     /// <summary>
     /// 
     /// </summary>
-    private PaintSpecification Specification { get; set; }
+    public PaintType PaintType { get; set; }
     
     /// <summary>
     /// 
     /// </summary>
-    private decimal Price { get; set; }
+    public PaintSpecification Specification { get; set; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public Brand PaintBrand { get; set; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public decimal Price { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
+    /// <param name="productId"></param>
     /// <param name="name"></param>
     /// <param name="type"></param>
     /// <param name="specification"></param>
     /// <param name="price"></param>
-    public PaintProduct(string name, PaintType type, PaintSpecification specification, decimal price)
+    /// <param name="paintBrand"></param>
+    public PaintProduct(int productId, string name, PaintType type, PaintSpecification specification, decimal price, Brand paintBrand)
     {
+        ProductId = productId;
         Name = name;
         PaintType = type;
         Specification = specification;
         Price = price;
+        PaintBrand = paintBrand;
     }
     
     /// <summary>
